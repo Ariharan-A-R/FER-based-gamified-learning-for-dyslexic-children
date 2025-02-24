@@ -4,7 +4,7 @@ import random
 from PIL import Image, ImageTk, ImageSequence
 
 # Dictionary of letter-image matches (A-Z)
-letter_images = {letter: f"{letter.lower()}.png" for letter in "ABCDEFGHIJKLMNOPQRSTUVWXYZ"}
+letter_images = {letter: f"matchAlphabets{letter.lower()}.png" for letter in "ABCDEFGHIJKLMNOPQRSTUVWXYZ"}
 
 # Create main window
 root = tk.Tk()
@@ -68,7 +68,7 @@ def show_fireworks():
     y = root.winfo_y() + (600 - 300) // 2
     fireworks.geometry(f"300x300+{x}+{y}")
 
-    gif = Image.open("fireworks.gif")
+    gif = Image.open("matchAlphabets/fireworks.gif")
     frames = [ImageTk.PhotoImage(frame.convert("RGBA").resize((280, 280))) for frame in ImageSequence.Iterator(gif)]
 
     total_frames = len(frames)
@@ -100,7 +100,7 @@ def show_sad_smiley():
     y = root.winfo_y() + (600 - 220) // 2
     sad_window.geometry(f"220x220+{x}+{y}")
 
-    sad_gif = Image.open("sad_smiley.gif")
+    sad_gif = Image.open("matchAplhabets/sad_smiley.gif")
     frames = [ImageTk.PhotoImage(frame.convert("RGBA").resize((200, 200))) for frame in ImageSequence.Iterator(sad_gif)]
 
     sad_label = tk.Label(sad_window, bg="white")
@@ -160,7 +160,7 @@ def confirm_exit():
     exit_window.geometry(f"+{x}+{y}")
 
     # Load resized GIF
-    gif = Image.open("quit.gif").resize((200, 200))
+    gif = Image.open("matchAlphabets/quit.gif").resize((200, 200))
     gif_frames = [ImageTk.PhotoImage(frame) for frame in ImageSequence.Iterator(gif)]
 
     gif_label = tk.Label(exit_window, bg="white")
