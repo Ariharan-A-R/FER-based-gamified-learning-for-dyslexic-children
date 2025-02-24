@@ -4,7 +4,7 @@ import random
 from PIL import Image, ImageTk, ImageSequence
 
 # Dictionary of letter-image matches (A-Z)
-letter_images = {letter: f"matchAlphabets{letter.lower()}.png" for letter in "ABCDEFGHIJKLMNOPQRSTUVWXYZ"}
+letter_images = {letter: f"matchAlphabets/{letter.lower()}.png" for letter in "ABCDEFGHIJKLMNOPQRSTUVWXYZ"}
 
 # Create main window
 root = tk.Tk()
